@@ -1,0 +1,162 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.navbar-nav a {
+  font-size: 18px;
+}
+
+.form-wrapper {
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-image: url("../public//images/lg.jpg");
+  overflow: hidden;
+}
+
+.form-wrapper h3 {
+  font-size: 20px;
+  font-weight: 300px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.inner-div-login {
+  border: 3px;
+  border-style: double;
+  border-color: "black";
+  padding: 10px;
+  background-color: #f1c0c0;
+  width: 350px;
+  height: 200px;
+  position: relative;
+  margin-top: 67px;
+  left: 37%;
+}
+
+.form-wrapper label {
+  font-size: 20px;
+  font-weight: 200px;
+  font-family: "Comic Sans MS";
+  position: relative; 
+  text-align: left;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.form-wrapper input {
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.form-wrapper button {
+  width: auto;
+  height: 30;
+  background-color: rgb(43, 147, 226);
+  border-radius: 10%;
+  border: none;
+}
+.sub-content {
+  width: 300px;
+  height: 35px;
+  position: relative;
+  left: 10px;
+  margin: 10px auto;
+  border: 3px;
+  border-style: double;
+  border-color: "black";
+  padding: 5px;
+  background-color: #fff;
+}
+
+.form-logout {
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-image: url("../public//images/lg.jpg");
+  overflow: hidden;
+}
+.form-logout h3 {
+  font-size: 20px;
+  font-weight: 300px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.inner-div-logout {
+  border: 3px;
+  border-style: double;
+  border-color: "black";
+  background-color:  #f1c0c0;
+  width: 400px;
+  height: 250px;
+  position: relative;
+  margin-top: 67px;
+  left: 35%;
+}
+
+
+
+.form-logout label {
+  font-size: 20px;
+  font-weight: 200px;
+  font-family: "Comic Sans MS";
+  position: relative; 
+  text-align: left;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.form-logout input {
+  width: 50%;
+  margin-top: 10px;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.form-logout button {
+  width: auto;
+  height: 30;
+  margin-top:20px;
+  background-color:rgb(43, 147, 226);
+  border-radius: 5%;
+  border: none;
+}
+
+.sub-contaner {
+  width: 400px;
+  height: 35px;
+  position: relative;
+  left: 10px;
+  margin: 10px auto;
+  border: 3px;
+  border-style: double;
+  border-color: "black";
+  padding: 5px;
+  background-color: #fff;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
