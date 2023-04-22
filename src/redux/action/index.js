@@ -1,13 +1,13 @@
-export const addCart = (product) => {
+export const addCart = (total) => {
     return {
         type: "ADD_ITEM",
-        payload:product
+        payload:total
     }
 }
-export const deleteCart = (product) => {
+export const deleteCart = (total) => {
     return {
         type: "DELETE_ITEM",
-        payload:product
+        payload:total
     }
 }
 

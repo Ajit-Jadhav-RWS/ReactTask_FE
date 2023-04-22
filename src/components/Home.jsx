@@ -2,7 +2,7 @@ import React from "react";
 import Products from "./Products";
 
 const Home = () => {
-  const auth=localStorage.getItem("auth")
+  const auth=JSON.parse(localStorage.getItem("auth"))
   return (
     <div className="home">
       <div className="card text-bg-dark text-white border-0">

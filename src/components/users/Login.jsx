@@ -17,20 +17,18 @@ function Login() {
         email,
         password,
       },{
-        "Content-Type": "application/json",
-        Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST",
       }
     )
       .then( (res) => {
-        console.log(res.data);
         if (res.data.user) {
            toast.success("Login Success !", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          window.localStorage.setItem("ACCESS_TOKEN",res.data.accessToken)
-          window.localStorage.setItem("auth",true)
+          window.localStorage.setItem("email",JSON.stringify(res.data.user.email))
+          window.localStorage.setItem("ACCESS_TOKEN",JSON.stringify(res.data.accessToken))
+          window.localStorage.setItem("auth",JSON.stringify(true))
         window.location.href = "/home";
         }
       }

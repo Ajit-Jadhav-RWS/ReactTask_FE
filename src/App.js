@@ -6,18 +6,20 @@ import Logout from "./components/users/Logout";
 import Home from "./components/Home";
 import Product from "./components/Product";
 import Cart from "./components/Cart";
+import Submit from "./components/Submit";
 import { Routes, Route } from "react-router-dom";
 
 import ProtectedRoutes from "./ProtectedRoutes";
 import { useEffect } from "react";
 import SignUp from "./components/users/Register";
 function App() {
+  
   useEffect(() => {
-    if (localStorage.getItem("auth") === "true") {
-      console.log();
+    if (JSON.parse(localStorage.getItem("auth")) === true) {
+      console.log(JSON.parse(localStorage.getItem("auth")));
     }
   }, []);
-  const auth = localStorage.getItem("auth");
+  const auth = JSON.parse(localStorage.getItem("auth"));
   return (
     <div className="App">
       <Header />
@@ -30,6 +32,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route exact path="/products/:id" element={<Product />} />
           <Route exact path="/cart" element={<Cart auth={auth} />} />
+          <Route exact path="/submit" element={<Submit />} />
         </Route>
       </Routes>
       <ToastContainer />

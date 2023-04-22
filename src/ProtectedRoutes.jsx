@@ -12,7 +12,7 @@ const ProtectedRoutes = () => {
   useEffect(()=>{
     axios.get("http://localhost:5000/user/verify",{
       headers: {
-        "accesstoken": localStorage.getItem("ACCESS_TOKEN"), 
+        "accesstoken": JSON.parse(localStorage.getItem("ACCESS_TOKEN")), 
         "Content-Type": "application/json",
           Accept: "application/json",
           "Access-Control-Allow-Origin": "*",

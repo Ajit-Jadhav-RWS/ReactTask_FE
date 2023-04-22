@@ -15,7 +15,6 @@ function SignUp() {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios
       .post(
         "http://localhost:5000/user/signUp",
@@ -36,7 +35,7 @@ function SignUp() {
           toast.success("Registered Success !", {
             position: toast.POSITION.TOP_RIGHT,
           });
-          window.localStorage.setItem("token", res.data.saveUser);
+          // window.localStorage.setItem("token", res.data.saveUser);
           window.location.href = "/login";
         }
       })
