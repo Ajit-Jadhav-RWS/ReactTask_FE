@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { useEffect } from "react";
 import SignUp from "./components/users/Register";
+//import Model from "./components/Model";
 function App() {
   
   useEffect(() => {
@@ -32,6 +33,8 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route exact path="/products/:id" element={<Product />} />
           <Route exact path="/cart" element={<Cart auth={auth} />} />
+          <Route exact path="/submit" element={<Submit />} />
+          
           <Route exact path="/submit" element={<Submit />} />
         </Route>
       </Routes>

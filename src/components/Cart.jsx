@@ -5,8 +5,6 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { addCart, deleteCart } from "../redux/action/index";
-import Submit from "./Submit";
-
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import bootstrap from "bootstrap";
@@ -16,7 +14,7 @@ const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
   const [cartItem, setItem] = useState([]);
-  let total=0;
+  let totalPrice = 0;
   //add quantity
   const addMore = (product) => {
     axios
@@ -107,11 +105,10 @@ const Cart = () => {
 
   // render component
   const cartItems = (cartItem, i) => {
-    
-    const price=cartItem.price.split(",");
+    const price = cartItem.price.split(",");
 
-    total+=((Number(price.join("")))*cartItem.quantity)
-    console.log(total)
+    totalPrice += Number(price.join("")) * cartItem.quantity;
+    console.log(totalPrice);
     return (
       <div key={i} className="container">
         <div className="row outline">
@@ -130,9 +127,12 @@ const Cart = () => {
                 onClick={() => removeItem(cartItem, "remove")}
                 className="btn-close close_btn"
               ></button>
-              <h3 style={{textAlign:"center"}}> {cartItem.title}</h3>
-              <p style={{textAlign:"center"}}>{cartItem.description}</p>
-              <p style={{textAlign:"center"}}> Price: ₹ {cartItem.price}/-</p>
+              <h3 style={{ textAlign: "center" }}> {cartItem.title}</h3>
+              <p style={{ textAlign: "center" }}>{cartItem.description}</p>
+              <p style={{ textAlign: "center" }}>
+                {" "}
+                Price: ₹ {cartItem.price}/-
+              </p>
 
               <div
                 className="input-group"
@@ -140,9 +140,9 @@ const Cart = () => {
               >
                 <span className="input-group-btn">
                   <button
-                   onClick={() => {
-                    removeItem(cartItem, "quantity");
-                  }}
+                    onClick={() => {
+                      removeItem(cartItem, "quantity");
+                    }}
                     type="button"
                     className="quantity-left-minus btn btn-danger btn-number"
                     style={{
@@ -174,10 +174,9 @@ const Cart = () => {
                 />
                 <span className="input-group-btn">
                   <button
-                  
-                  onClick={() => {
-                    addMore(cartItem);
-                  }}
+                    onClick={() => {
+                      addMore(cartItem);
+                    }}
                     type="button"
                     className="quantity-right-plus btn btn-success btn-number"
                     style={{
@@ -199,7 +198,6 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      
     );
   };
 
@@ -217,20 +215,24 @@ const Cart = () => {
       {cartItem.length === 0 && emptyCart()}
       {cartItem.length !== 0 &&
         cartItem.map((item, i) => {
-          return cartItems(item, i)
+          return cartItems(item, i);
         })}
-        <div className="totalfooter container ">
-          <div><h5>Total Price :Rs {total}</h5></div>
-          <div>
-            {/* <button className="btn btn-outline-info" onClick={(e)=>submit}>Proceed</button> */}
-          <Link
-                        to={`/submit`}
-                        className="btn btn-outline-info"
-                      >
-                        Proceed
-                      </Link>
-          </div>
+      <div className="totalfooter container ">
+        <div>
+          <h5>Total Price :Rs {totalPrice}</h5>
         </div>
+        <div>
+          {/* <button className="btn btn-outline-info" onClick={Submit}>Proceed</button> */}
+          <Link
+            to={`/submit`}
+            className="btn btn-outline-info"
+            data-mdb-toggle="modal"
+            data-mdb-target="#staticBackdrop5"
+          >
+            Proceed
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

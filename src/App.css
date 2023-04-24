@@ -152,15 +152,6 @@
   background-color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .imgbg {
   background-color: #c2b8c3a8;
   margin: 2px;
@@ -221,3 +212,62 @@ font-weight: 600;
   position: relative;
 left:300px
 }
+
+.imgsizesubmit {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+margin-top: 50px;
+padding-top: 50px;
+  
+  }
+  
+.imgheight {
+  height: 70px;
+  animation-name: checked;
+  animation-duration: 5s;
+  }
+  
+.heading {
+  text-align: center;
+  color: black;
+  font-size: 49px;
+  padding-bottom: 100px;
+  animation-name: thankyou;
+  animation-duration: 5s;
+  }
+  
+.bgimagesubmit {
+  background-image: url("../public/images/floral.jpg");
+  background-size: 100% 100%;
+  padding: 162px;
+  margin: 1px;
+  }
+
+  
+@keyframes checked {
+  from {
+    position: relative;
+    top: -500px;
+    transform: rotate(0deg);
+  }
+  to {
+    position: relative;
+    top:0px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes thankyou {
+  from {
+    position: relative;
+    left: -500px;
+    transform: rotate(0deg);
+  }
+  to {
+    position: relative;
+    left:0px;
+    transform: rotate(360deg);
+  }
+}
+
