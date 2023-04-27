@@ -10,7 +10,7 @@ const ProtectedRoutes = () => {
   const [userData,setUser]=useState({})
    
   useEffect(()=>{
-    axios.get("http://localhost:5000/user/verify",{
+    axios.get("http://54.197.13.54:5000/user/verify",{
       headers: {
         "accesstoken": JSON.parse(localStorage.getItem("ACCESS_TOKEN")), 
         "Content-Type": "application/json",

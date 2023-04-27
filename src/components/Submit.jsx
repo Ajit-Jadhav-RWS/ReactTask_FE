@@ -12,7 +12,7 @@ function Submit() {
 useEffect(()=>{
   axios
   .delete(
-    "http://localhost:5000/user/removeAll",
+    "http://54.197.13.54:5000/user/removeAll",
     { params: { email: JSON.parse(localStorage.getItem("email")) } },
     {
       "Access-Control-Allow-Origin": "*",

@@ -17,7 +17,7 @@ function SignUp() {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:5000/user/signUp",
+        "http://54.197.13.54:5000/user/signUp",
         {
           first_name,
           last_name,

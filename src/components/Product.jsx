@@ -18,7 +18,7 @@ const Product = () => {
   const addProduct = (product) => {
     axios
       .post(
-        "http://localhost:5000/user/addToCart",
+        "http://54.197.13.54:5000/user/addToCart",
         {
           email: JSON.parse(localStorage.getItem("email")),
           product,
@@ -47,7 +47,7 @@ const Product = () => {
     const getProducts = async () => {
       setLoading(true);
       await axios
-        .get(`http://localhost:5000/user/getById/${id}`, {
+        .get(`http://54.197.13.54:5000/user/getById/${id}`, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

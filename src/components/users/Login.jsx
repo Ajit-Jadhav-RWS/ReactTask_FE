@@ -13,7 +13,7 @@ function Login() {
 
   const handleSubmit =  (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/user/signIn",{
+    axios.post("http://54.197.13.54:5000/user/signIn",{
         email,
         password,
       },{
