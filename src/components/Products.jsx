@@ -15,7 +15,7 @@ const Products = (props) => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const res = await axios.get("http://54.197.13.54:5000/user/getAllProduct", {
+      const res = await axios.get("http://localhost:5000/user/getAllProduct", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

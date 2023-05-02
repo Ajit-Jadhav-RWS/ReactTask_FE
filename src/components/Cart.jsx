@@ -19,7 +19,7 @@ const Cart = () => {
   const addMore = (product) => {
     axios
       .post(
-        "http://54.197.13.54:5000/user/addToCart",
+        "http://localhost:5000/user/addToCart",
         {
           email: JSON.parse(localStorage.getItem("email")),
           product,
@@ -49,7 +49,7 @@ const Cart = () => {
   const removeItem = async (item, action) => {
     axios
       .patch(
-        `http://54.197.13.54:5000/user/removeFromCart/${item.id}`,
+        `http://localhost:5000/user/removeFromCart/${item.id}`,
         {
           email: JSON.parse(localStorage.getItem("email")),
           action: action,
@@ -80,7 +80,7 @@ const Cart = () => {
     const getCartItem = async () => {
       axios
         .get(
-          "http://54.197.13.54:5000/user/getAllFromCart",
+          "http://localhost:5000/user/getAllFromCart",
           { params: { email: JSON.parse(localStorage.getItem("email")) } },
           {
             "Content-Type": "application/json",
